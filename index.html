@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animalium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+        /* Solo afecta al carrusel, sin dañar el resto del diseño */
+        #carruselAnimalium {
+            max-height: 300px; /* Altura máxima del carrusel */
+            overflow: hidden;
+        }
+
+        #carruselAnimalium .carousel-item img {
+            height: 300px;        /* Ajustamos la altura */
+            width: auto;          /* Mantenemos proporción */
+            object-fit: contain;  /* No corta las imágenes */
+            display: block;
+            margin: 0 auto;       /* Centra horizontalmente */
+        }
+
+        @media (max-width: 768px) {
+            #carruselAnimalium,
+            #carruselAnimalium .carousel-item img {
+                height: 200px;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="bg-light py-3 shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="m-0 text-primary">Animalium</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div id="carruselAnimalium" class="carousel slide carrusel-pequeno" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="img/pallas-cat.jpg" class="d-block w-100" alt="Animal 1" />
+        </div>
+        <div class="carousel-item">
+            <img src="img/snow-fox.jpg" class="d-block w-100" alt="Animal 2" />
+        </div>
+        <div class="carousel-item">
+            <img src="img/snow-wolf.jpg" class="d-block w-100" alt="Animal 3" />
+        </div>
+        <div class="carousel-item">
+            <img src="img/quokka.jpg" class="d-block w-100" alt="Animal 4" />
+        </div>
+        <div class="carousel-item">
+            <img src="img/jaguar.jpg" class="d-block w-100" alt="Animal 5" />
+        </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselAnimalium" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselAnimalium" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<section class="container my-5">
+    <h2 class="text-center mb-4">Animales Destacados</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/tigre-bengala.jpg" class="card-img-top" alt="Tigre" />
+                <div class="card-body">
+                    <h5 class="card-title">Tigre de Bengala</h5>
+                    <p class="card-text">Una de las especies más majestuosas de Asia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/delfin-mular.jpg" class="card-img-top" alt="Delfín" />
+                <div class="card-body">
+                    <h5 class="card-title">Delfín Mular</h5>
+                    <p class="card-text">Mamífero marino inteligente y sociable.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/aguila-real.jpg" class="card-img-top" alt="Águila" />
+                <div class="card-body">
+                    <h5 class="card-title">Águila Real</h5>
+                    <p class="card-text">Una de las aves rapaces más imponentes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/elefante-africano.jpg" class="card-img-top" alt="Elefante" />
+                <div class="card-body">
+                    <h5 class="card-title">Elefante Africano</h5>
+                    <p class="card-text">El animal terrestre más grande del planeta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container my-5">
+    <h2 class="text-center mb-4">Preguntas frecuentes</h2>
+    <div class="accordion" id="accordionFAQ">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    ¿Qué es Animalium?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    Animalium es una plataforma educativa y de concienciación sobre la fauna mundial.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    ¿Qué animales puedo encontrar?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Desde animales domésticos hasta especies exóticas y salvajes.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Info Legal -->
+            <div class="col-md-4">
+                <h5>Animalium</h5>
+                <p>&copy; 2025 Animalium. Todos los derechos reservados.</p>
+                <a href="#" class="text-white">Aviso legal</a>
+            </div>
+            <!-- Menú -->
+            <div class="col-md-4">
+                <h5>Enlaces</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white">Inicio</a></li>
+                    <li><a href="galeria.html" class="text-white">Galería</a></li>
+                    <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Redes -->
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <a href="https://instagram.com" target="_blank" class="text-white me-2">Instagram</a>
+                <a href="https://facebook.com" target="_blank" class="text-white me-2">Facebook</a>
+                <a href="https://twitter.com" target="_blank" class="text-white">Twitter</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
