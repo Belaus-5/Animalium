@@ -6,40 +6,38 @@ body {
     margin: 0;
 }
 
-/* ======== HEADER ======== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ======== HEADER Y NAVBAR ======== */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 0;
 }
 
 header h1 {
     font-weight: bold;
     margin: 0;
+    color: #0d6efd;
 }
 
-/* ======== NAV ======== */
-nav ul.nav {
-    margin-bottom: 0;
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-}
-
-nav ul.nav li.nav-item {
-    margin-left: 1rem;
-}
-
-nav ul.nav li.nav-item:first-child {
-    margin-left: 0;
-}
-
-nav ul.nav li.nav-item a.nav-link {
+.navbar-nav .nav-link {
     text-decoration: none;
     color: inherit;
     padding: 0.5rem 1rem;
     display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0a58ca;
 }
 
 .nav-link.active {
@@ -48,21 +46,137 @@ nav ul.nav li.nav-item a.nav-link {
     border-bottom: 2px solid #0d6efd;
 }
 
+/* NAVBAR RESPONSIVE */
+@media (max-width: 576px) {
+    .nav-link.active {
+        border-bottom: none;
+    }
+}
+
+/* ======== CARRUSEL ======== */
+@media (max-width: 576px) {
+    #carouselExampleIndicators {
+        display: none;
+    }
+}
+
 /* ======== GALERIA ======== */
 .galeria-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ======== RESPONSIVE ======== */
-@media (max-width: 576px) {
-    nav ul.nav {
+.galeria-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(13, 110, 253, 0.4);
+    cursor: pointer;
+}
+
+/* ======== CONTACTO (CONTENEDOR FORM + MAPA) ======== */
+#contacto-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Pantallas grandes (>=768px): form y mapa lado a lado */
+@media (min-width: 768px) {
+    #contacto-contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #form-contacto {
+        flex: 1 1 48%;
+        margin: 0;
+    }
+    #mapa {
+        flex: 1 1 48%;
+        height: 400px;
+        margin: 0;
+    }
+}
+
+/* Pantallas pequenas (<768px): uno debajo del otro */
+@media (max-width: 767px) {
+    #contacto-contenedor {
         flex-direction: column;
-        gap: 0.5rem;
     }
-    nav ul.nav li.nav-item {
-        margin-left: 0;
+    #mapa {
+        width: 100%;
+        height: 300px;
     }
+    #form-contacto {
+        width: 100%;
+    }
+}
+
+/* ======== MAPA ======== */
+#mapa {
+    width: 100%;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ======== FORMULARIO ======== */
+form label {
+    font-weight: 600;
+}
+
+form input.form-control,
+form textarea.form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input.form-control:focus,
+form textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+    outline: none;
+}
+
+form .text-danger {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    color: red;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0d6efd;
+}
+
+footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
 }

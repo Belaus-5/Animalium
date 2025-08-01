@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto - Animalium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="bg-light py-3 shadow sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="m-0 text-primary">Animalium</h1>
+        <nav class="navbar navbar-expand-md navbar-light bg-light p-0">
+            <div class="container-fluid p-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContacto" aria-controls="navbarContacto" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContacto">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- FORMULARIO + MAPA EN CONTENEDOR FLEX -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Contactanos</h2>
+    <div id="contacto-contenedor" class="d-flex flex-column flex-lg-row gap-4">
+        <!-- Formulario -->
+        <form id="form-contacto" novalidate class="flex-fill">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre *</label>
+                    <input type="text" class="form-control" id="nombre" required />
+                    <span id="error-nombre" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label for="apellidos" class="form-label">Apellidos *</label>
+                    <input type="text" class="form-control" id="apellidos" required />
+                    <span id="error-apellidos" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Correo electronico *</label>
+                    <input type="email" class="form-control" id="email" required />
+                    <div class="text-danger small mt-1" id="error-correo"></div>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono *</label>
+                    <input type="tel" class="form-control" id="telefono" required />
+                    <span id="error-telefono" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <label for="comentarios" class="form-label">Comentarios</label>
+                    <textarea class="form-control" id="comentarios" rows="4"></textarea>
+                </div>
+                <div class="col-12 text-end">
+                    <button type="reset" class="btn btn-secondary me-2">Limpiar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Mapa -->
+        <div id="mapa" class="mapa-contacto rounded shadow flex-fill" style="min-height: 350px;"></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Animalium</h5>
+                <p>&copy; 2025 Animalium. Todos los derechos reservados.</p>
+                <a href="#" class="text-white">Aviso legal</a>
+            </div>
+            <div class="col-md-4">
+                <h5>Enlaces</h5>
+                <ul class="list-unstyled">
+                    <li><a href="../index.html" class="text-white">Inicio</a></li>
+                    <li><a href="galeria.html" class="text-white">Galeria</a></li>
+                    <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Siguenos</h5>
+                <a href="https://instagram.com" target="_blank" class="text-white me-2">Instagram</a>
+                <a href="https://facebook.com" target="_blank" class="text-white me-2">Facebook</a>
+                <a href="https://twitter.com" target="_blank" class="text-white">Twitter</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>
